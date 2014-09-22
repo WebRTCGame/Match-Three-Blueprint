@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script type="text/javascript" src="../glfx.js/media/jquery-1.5.1.min.js"></script>
+    <script type="text/javascript" src="../glfx.js/glfx.js"></script>
+
+
+
+</head>
+
+<body>
+    <img id="textureImage" src="../../sprites/a/add-ons$A_New_Order$images$akladian$akl-homeguard.png" height="100" width="100">
+    <canvas id="canvas2d"></canvas>
+    <div id="placeholder"></div>
+    <button onclick='dostuff();'>asdf</button>
+        <input id="range1a" type="range" min="-1" max="1" step="0.01" oninput="
+document.getElementById('lbltipMin').innerHTML = 'Min: ' + this.min + ' / Val: ' + this.value  + ' / Max: ' + this.max;
+canvas.draw(texture).brightnessContrast(' + this.value + ', ' + 0 + ').update();
+"><label id="lbltipMin">test</label>
+    <script>
+    var canvas,texture,image;
+var brightness,contrast;
+    
+    var placeholder = document.getElementById('placeholder');
+         canvas = fx.canvas();
+      canvas.replace(placeholder);
+      
+        var dostuff = function() {
+            if (!window.fx) {
+        console.log("fx isn't there");
+        return;
+    }
+            
+            console.log("stuff");
+                //if (texture) texture.destroy();
+                
+           
+           
+           
+            image = document.getElementById("textureImage");
+           
+            texture = canvas.texture(image);
+            
+            canvas.draw(texture);
+            canvas.update();
+            canvas.draw(texture).sepia(0.5).update();
+            canvas.draw(texture).brightnessContrast(0.5, 0).update();
+        };
+        
+        
+    </script>
+
+</body>
+
+</html>
