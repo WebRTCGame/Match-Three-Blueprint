@@ -1,3 +1,4 @@
+console.log("play.js entry");
 var PlayState = new Kiwi.State('PlayState');
 
 /**
@@ -132,6 +133,8 @@ PlayState.update = function(){
 * @param tile{Sprite} The current tile clicked.
 */
 PlayState.clickTile = function (mouseX, mouseY) {
+    console.log(mouseX + " : " + mouseY);
+    console.log("tile clicked");
     var tileX = 0;
     var tileY = 0;
     if(!this.clearedOriginalBoard){
@@ -148,7 +151,7 @@ PlayState.clickTile = function (mouseX, mouseY) {
             tileY = j;
         }
     }
-
+    console.log(tileX + " x " + tileY);
     var tile = this.pieces[tileY][tileX];
 
 

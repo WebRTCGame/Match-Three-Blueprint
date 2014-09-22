@@ -18,6 +18,7 @@
 * 2 - stateToSwitch {String} Name of the state to switch to AFTER all the assets have loaded. Note: The state you want to switch to should already have been added to the game.
 * 3 - subfolder {String} The folder that the loading graphics are located at. 
 */
+
 var LoadingState = new KiwiLoadingScreen('LoadingState','IntroState', 'assets/img/loading/');
 
 LoadingState.preload = function () {
